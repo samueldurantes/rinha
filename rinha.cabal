@@ -1,0 +1,20 @@
+cabal-version:      2.4
+name:               rinha
+version:            0.0.0.1
+
+author:             Samuel Durante
+maintainer:         samueldurante.h@gmail.com
+license:            MIT
+
+executable rinha
+    main-is:          Main.hs
+    other-modules:    Tree
+    extensions:       OverloadedStrings
+                    , ScopedTypeVariables
+                    , LambdaCase
+    build-depends:    base ^>=4.16.4.0
+                    , aeson
+                    , text
+                    , bytestring
+    hs-source-dirs:   src
+    default-language: Haskell2010
