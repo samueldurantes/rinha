@@ -1,0 +1,23 @@
+{
+  "name": "ata.rinha",
+  "expression": {
+    "kind": "Print",
+    "value": {
+      "kind": "Binary",
+      "lhs": {
+        "kind": "Int",
+        "value": 1,
+        "location": { "start": 6, "end": 7, "filename": "ata.rinha" }
+      },
+      "op": "Add",
+      "rhs": {
+        "kind": "Int",
+        "value": 1,
+        "location": { "start": 10, "end": 11, "filename": "ata.rinha" }
+      },
+      "location": { "start": 6, "end": 11, "filename": "ata.rinha" }
+    },
+    "location": { "start": 0, "end": 12, "filename": "ata.rinha" }
+  },
+  "location": { "start": 0, "end": 12, "filename": "ata.rinha" }
+}

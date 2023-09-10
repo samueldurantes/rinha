@@ -1,0 +1,66 @@
+{
+  "name": "ata.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "add",
+      "location": { "start": 4, "end": 7, "filename": "ata.rinha" }
+    },
+    "value": {
+      "kind": "Function",
+      "parameters": [
+        {
+          "text": "x",
+          "location": { "start": 14, "end": 15, "filename": "ata.rinha" }
+        },
+        {
+          "text": "y",
+          "location": { "start": 17, "end": 18, "filename": "ata.rinha" }
+        }
+      ],
+      "value": {
+        "kind": "Binary",
+        "lhs": {
+          "kind": "Var",
+          "text": "x",
+          "location": { "start": 27, "end": 28, "filename": "ata.rinha" }
+        },
+        "op": "Add",
+        "rhs": {
+          "kind": "Var",
+          "text": "y",
+          "location": { "start": 31, "end": 32, "filename": "ata.rinha" }
+        },
+        "location": { "start": 27, "end": 32, "filename": "ata.rinha" }
+      },
+      "location": { "start": 10, "end": 34, "filename": "ata.rinha" }
+    },
+    "next": {
+      "kind": "Print",
+      "value": {
+        "kind": "Call",
+        "callee": {
+          "kind": "Var",
+          "text": "add",
+          "location": { "start": 43, "end": 46, "filename": "ata.rinha" }
+        },
+        "arguments": [
+          {
+            "kind": "Int",
+            "value": 1,
+            "location": { "start": 47, "end": 49, "filename": "ata.rinha" }
+          },
+          {
+            "kind": "Int",
+            "value": 2,
+            "location": { "start": 47, "end": 49, "filename": "ata.rinha" }
+          }
+        ],
+        "location": { "start": 43, "end": 50, "filename": "ata.rinha" }
+      },
+      "location": { "start": 37, "end": 51, "filename": "ata.rinha" }
+    },
+    "location": { "start": 0, "end": 51, "filename": "ata.rinha" }
+  },
+  "location": { "start": 0, "end": 51, "filename": "ata.rinha" }
+}
