@@ -12,7 +12,7 @@ data HExpr
   | HApp HExpr HExpr
   | HBool Bool
   | HInt Int
-  | Unit
+  | HUnit
 
 instance Show HExpr where
   show (HVar n) = unpack n
@@ -20,7 +20,7 @@ instance Show HExpr where
   show (HInt i) = show i
   show (HApp _ _) = "<app>"
   show (HLam _) = "<function>"
-  show Unit = "()"
+  show HUnit = "()"
 
 type Context = [(Text, HExpr)]
 
@@ -79,5 +79,5 @@ eval ctx = \case
     call e es
   EInt {intValue} -> pure $ HInt intValue
   EPrint {value} -> do
-    eval ctx value >>= print
-    pure Unit
+    print =<< eval ctx value
+    pure HUnit
