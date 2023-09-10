@@ -9,9 +9,12 @@ license:            MIT
 executable rinha
     main-is:          Main.hs
     other-modules:    Tree
+                    , Evaluator
     extensions:       OverloadedStrings
                     , ScopedTypeVariables
                     , LambdaCase
+                    , OverloadedRecordDot
+                    , NamedFieldPuns
     build-depends:    base ^>=4.16.4.0
                     , aeson
                     , text

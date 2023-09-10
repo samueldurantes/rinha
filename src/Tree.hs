@@ -1,68 +1,73 @@
 module Tree
-  ( File(..)
-  , Expr(..)
-  ) where
+  ( File (..),
+    Expr (..),
+    Param (..),
+  )
+where
 
+import Data.Aeson (FromJSON (parseJSON), withObject, (.:))
 import Data.Text (Text)
-import Data.Aeson ((.:), withObject, FromJSON(parseJSON))
 
 data File = File
-  { fileName :: Text
-  , fileExpression :: Expr
-  , fileLocation :: Location
-  } deriving (Show)
+  { fileName :: Text,
+    fileExpression :: Expr,
+    fileLocation :: Location
+  }
+  deriving (Show)
 
 data Location = Location
-  { locationStart :: Int
-  , locationEnd :: Int
-  , locationFilename :: Text
-  } deriving (Show)
+  { locationStart :: Int,
+    locationEnd :: Int,
+    locationFilename :: Text
+  }
+  deriving (Show)
 
 data Param = Param
-  { paramText :: Text
-  , paramLocation :: Location
-  } deriving (Show)
+  { paramText :: Text,
+    paramLocation :: Location
+  }
+  deriving (Show)
 
 data Expr
   = ELet
-      { name :: Param
-      , value :: Expr
-      , next :: Expr
-      , location :: Location
+      { name :: Param,
+        value :: Expr,
+        next :: Expr,
+        location :: Location
       }
   | EFunction
-      { parameters :: [Param]
-      , value :: Expr
-      , location :: Location
+      { params :: [Param],
+        value :: Expr,
+        location :: Location
       }
   | EIf
-      { condition :: Expr
-      , thenBranch :: Expr
-      , elseBranch :: Expr
-      , location :: Location
+      { condition :: Expr,
+        thenBranch :: Expr,
+        elseBranch :: Expr,
+        location :: Location
       }
   | EBinary
-      { lhs :: Expr
-      , op :: Text
-      , rhs :: Expr
-      , location :: Location
+      { lhs :: Expr,
+        op :: Text,
+        rhs :: Expr,
+        location :: Location
       }
   | EVar
-      { text :: Text
-      , location :: Location
+      { text :: Text,
+        location :: Location
       }
   | ECall
-      { callee :: Expr
-      , arguments :: [Expr]
-      , location :: Location
+      { callee :: Expr,
+        arguments :: [Expr],
+        location :: Location
       }
   | EInt
-      { intValue :: Int
-      , location :: Location
+      { intValue :: Int,
+        location :: Location
       }
   | EPrint
-      { value :: Expr
-      , location :: Location
+      { value :: Expr,
+        location :: Location
       }
   deriving (Show)
 
